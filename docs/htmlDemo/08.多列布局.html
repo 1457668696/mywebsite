@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- 多列布局，分配列数或者按单位分配尽可能多的列 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contain {
+            /* 创建指定列 */
+            column-count: 4;
+            /* 按宽度创建尽可能多的列，但是除不尽的话就会多余 */
+            /* column-width: 10px; */
+            /* 列间隙 */
+            column-gap: 10px;
+            /* 列边框 像是盒子边框，但不占宽度*/
+            column-rule: 1px solid #5555;
+        }
+        
+        .contain div {
+            height: 200px;
+            background-color: rgb(146, 146, 146);
+            color: rgb(250, 250, 250);
+        }
+        
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>四大名著</h1>
+    <div class="contain">
+
+        <div>三国演义</div>
+        <div>红楼梦</div>
+        <div>西游记</div>
+        <div>水浒传</div>
+
+    </div>
+
+
+</body>
+
+</html>

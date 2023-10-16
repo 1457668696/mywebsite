@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 插件功能 -->
+    <!-- 直接输入回车生成带id，多个子标签等等 -->
+
+
+    <style>
+        /* 层叠性，样式，不同的叠加，相同的最后层叠的。例如设置一个边框，先设置统一的，再设置单独的叠加 */
+        /* 继承性，子标签有父标签的样式。行高继承后是当前标签的文字大小*行高。 */
+        /* 优先级：复合选择器，权重，行内>id>类/伪类>元素>继承 */
+        /* 复合选择器，则需要计算权重优先 */
+        /* 优先级,布局-自身属性-文本属性-其他 */
+
+        /* ------------ 文字--------------------- */
+        p {
+            /* rgb三个数，如果加a就是加透明度 还有hsl 和十六进制颜色*/
+            color: rgba(31, 124, 118, 0.5);
+            font-family: '微软雅黑';
+            font-size: 20px;
+            font-weight: 700;                              /* 不加单位，400是正常宽度 */
+            /*   font-style: italic;                       一般不加斜体，反而是normal来正字体*/
+            font-style: normal;
+            /*   font: 100px '微软雅黑';                    {样式，宽度，大小，字体}。34必须要有不然不起作用，必须有顺序                            */
+            /* 边框颜色 */
+            border: 2px solid Tomato;
+            /*连写 font:style weight size family 特殊的写在下边覆盖*/
+            /* ------------ 文本--------------------- */
+            text-align: center;
+            /* 文本图片链接span input都可以居中，但要给个父盒子*/
+            text-decoration: undeline;
+            /*   text-decoration: none;                         用于取消链接的下划线 */
+            /*   text-indent: 20em;                             首行缩进，em当前元素内文字大小的相对距离，通常用于段落统一缩进.rem是相对html                 */
+            /*   line-height: 26px;                             行高等于上下间距加文本高度。通常用第一段落底到第二行段落底                                                                         */
+            text-shadow: 5px 5px 6px rgba(0, 0, 0, .1);
+        }
+
+        /* ----------------背景图片------------------------- */
+        .div {
+            background-color: antiquewhite;
+            width: 1000px;
+            height: 1000px;
+            background-image: url(./src/1.png);
+            background-repeat: no-repeat;
+            /* 默认平铺，可以沿X或者Y平铺 */
+            /* background-position: bottom right; */
+            /* background-position: 200px 100px; */
+            /* 居中写法 */
+            background-position: center 50px;
+            /* 只写一个第二个就默认居中  如果是精确值x y距离 只写一个另一个默认居中，距离边距多少*/
+            /* 背景固定，不推荐 */
+            /* background-attachment: fixed; */
+            opacity: 0.9
+            /* 透明度 */
+            /* 连写 background:color url on-repeat 100px 50px */
+        }
+
+
+        /* 标签选择器 */
+        p{
+            display: block;
+        }
+
+
+        /* 类选择器 */    
+        .red {
+            color: rgba(228, 80, 80, 0.875);
+        }
+
+
+        /* 元素center类 */   
+        p.center {
+            color: #000;
+
+
+        }
+        /* id选择器 */  
+        #yello {
+            color: rgba(37, 40, 167, 0.805);
+        }
+
+
+        /* 后代选择器 空格 */        
+        .son div {
+            color: rgb(221, 72, 235);
+        }
+
+
+        /* 子代选择器 >*/       
+        .qingzi>a {
+            color: rgba(227, 108, 93, 0.651);
+        }
+
+
+        /* 邻紧兄弟选择器， +*/    
+        .brother+p {
+            font-style: italic;
+        }
+
+        /* 通用兄弟选择器， ~*/  
+        .brother~p {
+            font-style: italic;
+        }
+
+        /* color: 并集选择器 ,*/       
+        .red,
+        .qingzi {
+            text-decoration: none;
+        }
+
+
+        /* 交集选择器 某个标签某个类直接；连写 */     
+        p.box {
+            /* p标签box类 */
+            color: #000;
+        }
+
+          
+
+        /* *通配选择器，全选，包括html，为了后期清楚所有元素内外边距使用，margin:0 padding:0；            px像素，h标题字体比较特殊。字体可以设置size大小，谷歌为16px默认宽度weigth(400就是默认的 */       
+        * {
+            font-style: italic;
+        }
+
+
+        /* 属性选择器 div中有id的*/        
+        div[id] {
+            color: #000;
+        }
+
+
+        /* 属性选择器 div中有id等于。。。*/
+        div[id="onete"] {
+            color: #000;
+        }
+
+
+        /* 属性选择器 div中有id包含onwtwo的（多个）*/     
+        div[id~=onwtwo] {
+            color: #000;
+        }
+
+
+        /* 伪类 指针悬浮在连接上*/      
+        a:hover {
+            color: #000;
+        }
+        /* 伪类选择器，表示某种状态的选择器，如第一行，最后一行，选中，访问。减少硬代码的编写
+          :first-child       第一个元素
+          :nth-child(5)      第5个元素
+          :last-child        最后一个元素
+          :nth-last-child(5) 倒数第五个
+
+
+          公式：偶数2n,奇数2n+1,前五个-n+5,从5个往后n+5
+          ::first-line   第一行
+          ::first-letter 首个字符
+          ::first-line   首行
+
+          以下四个都要使用的话，需要顺序声明不然无效：
+        1.  a:link  未被访问
+        2.  a:visited 已访问
+        3.  a:hover 经过
+        4.  a:active 鼠标按下未放开的链接
+
+        
+        5.input:focus 选中焦点选择器 
+
+
+
+          通过css创建标签，装饰不重要的小图
+          ::before盒子元素内容的最前添加，必须设置content:''默认行内
+          ::after盒子元素内容的最后添加
+          */
+
+
+
+
+        /* ------------------盒子转换------------------------ */
+        /* 块元素，可以指定宽高，内外边距，独占一行，默认父元素宽度 居中技巧：margin:10px auto*/
+        /* 行内元素，无法指定宽高，不换行。内容撑开，基本只能设置水平（宽）方向的边距*,居中，父元素text-line=center/
+        /* 行内块元素，不独占一行，但却可以设置宽高,居中技巧，行高等于盒子高 */
+        
+        .a {
+            /* 转化为块级元素，可以设置宽高，同理inline,line-block             最常用13*/
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(247, 199, 199);
+        }
+        
+        .line {
+            display: line;
+        }
+        
+        .center {
+            width: 100px;
+            height: 50px;
+            background-color: rgba(231, 130, 130, 0.904);
+            line-height: 50px;
+            margin: 50px auto;
+            /*   行高的上空隙和下空隙会把文字挤到中间，行高小于盒子高度，文字往上，大于盒子文字往下，设置文字高度和盒子高度一致 */
+        }
+        /* <!-- ------------------------常用属性-------------------------------- --> */
+        
+        p1 {
+            display: block;
+            display: none;
+            visibility: hidden;
+            visibility: visible;
+            overflow: hidden;
+            /* 滚动条显示隐藏的，也可以设置auto让他自动判断是否滚动，一般都隐藏，定位的尽量不要隐藏*/
+            overflow: scroll;
+            /* 除了转换为块元素之外还有显示元素的意思，none就是隐藏，隐藏后脱标 .visibility不脱标还占用 overflow对溢出（文字大于盒子）的部分隐藏*/
+        }
+    </style>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <p>我是标签选择器</p>
+    <div class="red yello">我是.类选择器,统一布局，可以多个类，用空格</div>
+    <!-- 块元素。独占一行，可以设置宽高边距。宽度默认父级的100%，是一个盒子，可以放行内或者块级元素。文字类p 和h1标签不能放块级元素 -->
+    <!-- 一行只能放一个块级 -->
+    <div id="yello">我是＃ id选择器,单一布局,配合js最好用</div>
+
+
+    <div class="son">
+        我没有变化
+        <div>我是后代选择器</div>
+    </div>
+
+    <div class="qingzi">
+        <a href="#">我是儿子</a>
+        <a href="#">我是孙子</a>
+    </div>
+
+    <span> </span>
+    <!-- 行内元素。可以都在一行放置多个元素，不能直接设置宽高，宽高默认为内容高度，只允许行内元素在(链接不行)，a,strong,b,u,span -->
+    <!-- 把a设置成块级元素，就可以设置宽高 -->
+    <a href="#" class="a">我变成块级了</a>
+    <div class="line">我变成行内了</div>
+
+
+    <!-- <img>    <input>     <td>    </td>  -->
+    <!--行内块元素，放多个行内，但是有空白间隙，默认宽度是本身内容，可以设置宽高。 -->
+
+    <div class="center">盒子居中显示</div>
+
+    <div class="div"></div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- )。
+
+
+-->

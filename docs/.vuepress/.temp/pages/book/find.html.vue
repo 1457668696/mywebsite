@@ -1,0 +1,96 @@
+<template><div><nav class="table-of-contents"><ul><li><router-link to="#主食材">主食材</router-link></li><li><router-link to="#副食材">副食材</router-link></li><li><router-link to="#调料">调料</router-link></li><li><router-link to="#厨具">厨具</router-link></li><li><router-link to="#早餐">早餐</router-link><ul><li><router-link to="#面条">面条</router-link></li></ul></li><li><router-link to="#午餐">午餐</router-link><ul><li><router-link to="#鸡蛋">鸡蛋</router-link></li><li><router-link to="#豆腐">豆腐</router-link></li><li><router-link to="#土豆">土豆</router-link></li><li><router-link to="#蔬菜">蔬菜</router-link></li><li><router-link to="#肉类">肉类</router-link></li></ul></li></ul></nav>
+<h2 id="主食材" tabindex="-1"><a class="header-anchor" href="#主食材" aria-hidden="true">#</a> 主食材</h2>
+<div class="custom-container tip"><p class="custom-container-title">大米</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">面条</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">粉</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">饵块</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">饺皮</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">包子</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">饼</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">土豆</p>
+</div>
+<h2 id="副食材" tabindex="-1"><a class="header-anchor" href="#副食材" aria-hidden="true">#</a> 副食材</h2>
+<div class="custom-container tip"><p class="custom-container-title">鸡蛋</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">猪肉</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">豆腐</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">鸡肉</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">蔬菜</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">干货</p>
+</div>
+<h2 id="调料" tabindex="-1"><a class="header-anchor" href="#调料" aria-hidden="true">#</a> 调料</h2>
+<div class="custom-container tip"><p class="custom-container-title">葱</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">姜</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">蒜</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">辣椒</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">豆瓣酱</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">蚝油</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">八角</p>
+</div>
+<div class="custom-container tip"><p class="custom-container-title">香叶</p>
+</div>
+<h2 id="厨具" tabindex="-1"><a class="header-anchor" href="#厨具" aria-hidden="true">#</a> 厨具</h2>
+<div class="custom-container tip"><p class="custom-container-title">擦丝器、滤网</p>
+</div>
+<h2 id="早餐" tabindex="-1"><a class="header-anchor" href="#早餐" aria-hidden="true">#</a> 早餐</h2>
+<h3 id="面条" tabindex="-1"><a class="header-anchor" href="#面条" aria-hidden="true">#</a> 面条</h3>
+<ul>
+<li>清汤面</li>
+<li>杂酱面</li>
+</ul>
+<h2 id="午餐" tabindex="-1"><a class="header-anchor" href="#午餐" aria-hidden="true">#</a> 午餐</h2>
+<h3 id="鸡蛋" tabindex="-1"><a class="header-anchor" href="#鸡蛋" aria-hidden="true">#</a> 鸡蛋</h3>
+<ul>
+<li>西红柿炒鸡蛋（炒）</li>
+<li>青椒炒蛋（炒）</li>
+<li>鸡蛋羹（蒸）</li>
+<li>荷包蛋（煮）</li>
+<li>白菜鸡蛋汤（煮）</li>
+<li>紫菜蛋花汤（煮）</li>
+</ul>
+<h3 id="豆腐" tabindex="-1"><a class="header-anchor" href="#豆腐" aria-hidden="true">#</a> 豆腐</h3>
+<ul>
+<li>麻婆豆腐（烧）</li>
+<li>脆皮豆腐（挂糊）</li>
+<li>豆腐炒木耳芹菜（煎）</li>
+</ul>
+<h3 id="土豆" tabindex="-1"><a class="header-anchor" href="#土豆" aria-hidden="true">#</a> 土豆</h3>
+<ul>
+<li>土豆回锅肉（炒）</li>
+<li>青椒土豆丝（炒）</li>
+<li>酸辣土豆丝（炒）</li>
+<li>红烧土豆火腿（炒）</li>
+</ul>
+<h3 id="蔬菜" tabindex="-1"><a class="header-anchor" href="#蔬菜" aria-hidden="true">#</a> 蔬菜</h3>
+<ul>
+<li>红烧茄子（烧）</li>
+<li>醋溜白菜（炒）</li>
+<li>耗油上海青（烧）</li>
+<li>小瓜汤（煮）</li>
+</ul>
+<h3 id="肉类" tabindex="-1"><a class="header-anchor" href="#肉类" aria-hidden="true">#</a> 肉类</h3>
+<ul>
+<li>干锅花菜五花肉（炒）</li>
+<li>糖醋排骨（烧）</li>
+<li>可乐鸡翅（烧）</li>
+</ul>
+</div></template>
+
+

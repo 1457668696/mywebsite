@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- 总结：在浮动流的时候，使用margin-right清除边距，最后一个用li设置为0就可以解决 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .top {
+            height: 100px;
+            background-color: rgb(166, 166, 166);
+            text-align: center;
+            width: 100%;
+        }
+        
+        .banner {
+            height: 400px;
+            width: 1600px;
+            background-color: bisque;
+            margin: 10px auto;
+        }
+        
+        .body {
+            margin: 10px auto;
+        }
+        
+        .body .one {
+            width: 1600px;
+            margin: 0 auto;
+            /* overflow: hidden; */
+        }
+        
+        .body .two {
+            width: 1600px;
+            margin: 0 auto;
+            margin-top: 10px;
+            overflow: hidden;
+            /* 父元素清除浮动（父元素无高度，导致标准流子盒子的布局。影响下边的布局） 
+所以需要清楚浮动，根据内部的浮动流来撑开盒子*/
+        }
+        
+        .body .one li {
+            float: left;
+            height: 300px;
+            width: 392.5px;
+            background-color: rgb(107, 116, 242);
+            margin-right: 10px;
+            list-style: none;
+        }
+        
+        /* 要右边！！！！！！！！ */       
+        .body .one .last {
+            margin-right: 0px;
+        }
+        
+        .body .two li {
+            float: left;
+            height: 580px;
+            width: 392px;
+            background-color: rgb(51, 52, 63);
+            margin-right: 10px;
+        }
+        
+        .body .two .last {
+            margin-right: 0;
+        }
+        
+        .footer {
+            height: 100px;
+            background-color: rgb(174, 99, 99);
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+
+    <div class="top">头部</div>
+    <div class="banner">导航</div>
+    <div class="body">
+        <ol class="one">
+            <li>展示1</li>
+            <li>展示2</li>
+            <li>展示3</li>
+            <li class="last">展示4</li>
+        </ol>
+        <ol class="two">
+            <li>展示5</li>
+            <li>展示6</li>
+            <li>展示7</li>
+            <li class="last">展示8</li>
+        </ol>
+    </div>
+
+    <div class="footer">尾部</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 盒子模型 */
+    /* 盒子大小等于 高宽+内边距+边框*/
+    /* css3内减模式  box-sizing: border-box;会自动减去边框和内边距的距离，直接设置*/
+    /* 外边距折叠: 1.1合并 
+                       Q:上下两个盒子布局的时候,盒子的外边距会合并,只有一个生效 
+                       A:记得只设置一个盒子就好。 
+                  1.2塌陷 
+                       Q:嵌套的块元素,子元素margin-top会作用在父元素上 
+                       A:盒子嵌套,里面的盒子添加外外边距的时候,需要在父盒子加overflow:hidden,
+                         或者给父元素加边框/内边距 */
+    
+    .div55 {
+        width: 300px;
+        height: 300px;
+        background-color: aquamarine;
+        /* 边框线  纸箱子*/
+        border: 1px solid #000;
+        /* 内边距 泡沫填充*/
+        padding: 20px;
+        /* 外边距 盒子之间的距离 上 右 下 左 | 上 左右 下|上下 左右*/
+        margin: 20px;
+    }
+    /* 清楚内外边距，开始布局 */
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    /* 简单来说，盒子160，加上下左右各20px就是200px的盒子，有边框的话另外减去 */
+
+    
+    .div555 {
+        box-sizing: border-box;
+    }
+    
+    .div1 {
+        width: 160px;
+        height: 160px;
+        background-color: pink;
+        /* border: 10px solid red; */
+        /* 边框border会影响盒子的实际宽度，量的时候只量盒子，或者减去20。 */
+        padding: 20px;
+        /*内边距padding 内容到边框的距离 * 也会影响盒子的实际大小，实际上减40px，上下边距/
+        /* 如果不设置会自动继承父类的边距，声明了就会超出盒子 */
+    }
+    
+    .div2 {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        margin-top: 20px;
+    }
+    
+    .div3 {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        margin: 0 auto;
+        /* 盒子有宽度，上下为0左右为auto就能使块级元素居中 */
+        /* 行内，行内块元素只需要给他们的父级添加text-alien:center,看出文字 */
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="div1">div1</div>
+    <div class="div2">div2</div>
+    <div class="div3"><span>div3</span></div>
+
+    <div>
+        <div></div>
+    </div>
+
+
+
+    <!-- 盒子问题 -->
+    <!-- <span>行内尽量只设置左右外边距，除非转换为块或者行内块</span> -->
+
+
+</body>
+
+</html>

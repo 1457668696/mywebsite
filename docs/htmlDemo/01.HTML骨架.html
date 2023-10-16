@@ -1,0 +1,327 @@
+ <!-- ul>li*10 -->
+ <!-- div{$}*5 --> 
+ <!-- div*5 --> 
+ <!-- .name{&}*5 --> 
+ <!-- .htmlDemo$*5 -->
+
+
+<!-- html文档声明，已经默认html5,其他版本有特殊设置参数 -->
+<!DOCTYPE html>
+<!-- 中文,翻译优化 -->
+<html lang="zh-CN">
+
+
+
+<!-- 网页元数据 name 和 context键值对定义-->
+
+<head>
+    <!-- utf8是最全面的，但是某些浏览器是gbk编码，360浏览器 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auth" content="wangxianmin">
+    <meta name="description" content="个人网站">
+    <meta name="keywords" content="HTML, DHTML, CSS, XML, XHTML, JavaScript, VBScript">
+
+
+
+    <!-- 网页标题，添加书签的时候有用 -->
+    <title>基础架构</title>
+
+    <!-- 网页图标，一般用favicon.ico -->
+    <link rel="icon" href="./src/1.png" type="image/x-icon">
+
+    <!-- 所有链接跳转新窗口 -->
+    <base target="_blank" />
+</head>
+
+<style>
+
+</style>
+
+<body id="body">
+
+    <!-- -->
+    <h4>h5新标签结构化,配合标准浮动，网格或者弹性盒子放置合适位置</h4>
+    <header>页首header</header>
+    <!-- 使用#链接id -->
+    <nav>导航nav</nav>
+    <main>主题内容main</main>
+    <article>文章article</article>
+    <section>组件section</section>
+    <div>盒子div</div>
+    <span>内联span</span>
+    <aside>侧边栏aside</aside>
+    <footer>页尾footer</footer>
+
+
+
+    <!-- 标题h1最好用一次，1-6最多用三次 -->
+    <h1>h1-6标题</h1>
+    <!-- 段落合并空格换行，以及主动换行占位符 -->
+    <p>段落p,独占一行,块级。<br> 为什么p看起来更大,因为内置的css,可以去掉</p>
+    <div>div块级,通常是作为结构,标题段落列表导航</div>
+    <span>span内联,作为内容</span>
+
+
+
+    <!----列表--- -->
+    <!-- 无序列表 -->
+    <ul id="none">
+        <li><span>可以嵌套标签,li是一个容器<span></li>
+        <li>u就是un的含义,无序号列表</li>
+        <li>嵌套标签,可以去除基本样式</li>
+        <li>比如放入几张图片，视频作为列表</li>
+    </ul>
+
+    <!-- 有序列表 -->
+    <ol>
+        <li>油条</li>
+        <li>豆浆</li>
+        <li>热狗</li>
+    </ol>
+
+    <!-- 自定义列表 -->
+    <dl>
+        <dt>我的回合</dt>
+        <dd>抽卡</dd>
+        <dd>丢卡</dd>
+
+        <dt>他的回合</dt>
+        <dd>丢卡</dd>
+        <dd>结束</dd>
+    </dl>
+    <hr>
+
+
+
+    <!-- 文本格式化 多个空格折算成一个,手动换行用br，方向alien=center-->
+    <!-- 语义化<strong>比外表<b>更重要 -->
+    几种语义标签：<br>
+    <ul>
+        <li><strong>强烈语义,表现为加粗strong</strong></li>
+        <li><em>强调专用em。表现为斜体</em></li>
+        <li><mark>标记专用mark。表现为黄色</mark></li>
+        <li> 缩略语：<abbr title="美国航天局">NASA</abbr></li>
+        <li>
+            <address>联系方式address标签</address>
+        </li>
+        <li>表示上下标: x<sup>2</sup>,H<sub>2</sub>O是水</li>
+        <li>代码：
+            <pre><code>pre表示预留空白, code标记代码
+
+              let a = console.log("你好");
+          </code></pre> 变量是<var> a </var>这段代码输出：<samp>你好</samp>,可以按<kdb>enter打印</kdb>
+        </li>
+        <li><time datetime="2023-3-20">2023年3月20日,被datetime机器识别</time></li>
+        <li>
+            <p>一般在内容中使用,我是一个<em>人类</em>,会<strong>思考</strong>,不是机器,我的地址：
+            <address>西湖</address>
+            </p>
+        </li>
+    </ul>
+
+    <!-- 不推荐使用b,u,i，找不到用的才使用，或者专用名词才用，em倾斜的话，使用font-style矫正css-->
+    <!-- 引用标签浏览器不支持，download属性也不支持 -->
+
+
+
+    <hr>
+    <!-- 自我闭合的标签叫做空元素 加/闭合可以作为xml识别-->
+    <div></div>
+
+    <!-- 绝对 相对（同上下级）  -->
+    <a href="1.jpg"></a>      
+    <a href="src/1.png"></a>
+    <a href="../html css/"></a>
+
+    <!-- 图片插入 -->
+    <img src="./src/14.png" alt="图片" width="100px" title="悬停提示">
+
+
+    <!-- 添加属性,属性建议加单/双引号,防止其他属性无法识别 值有引号使用实体符号-->
+    <a href="http://xyjxww.cn" title="Isn &apos; t" target="_blank">网站</a>
+
+    <!-- #可以链接id属性 -->
+    <a href="#body">返回首页</a>
+
+
+    <!-- 特殊标签，实体引用符号 -->
+    <div>实体符号以&开始 ;结束。&lt; &gt; &quot; &apos;&amp;</div>
+
+    <!-- 布尔属性，是否启用/选中属性，直接简写，disable="disable" -->
+    <input type="text" value="无法输入" disabled>
+
+    <!-- 翻译优化，搜索引擎或者读音 -->
+    <span lang="jp">ご飯が熱い</span>
+
+     <hr>
+
+
+
+
+
+
+            <!-- 表单 -->
+    <form action="" method="get">
+            文本<input type="text" placeholder="默认输入文字"><br> 
+            密码<input type="password" name="password" id=""><br>
+
+            单选<!-- 单选 ，这个label除了使用for熟悉绑定id以为还可以直接包裹文字，实现点文字选中-->
+                <label for="sex">男</label><input type="radio" name="sex" id="sex" checked><label> 女<input type="radio"
+                      name="sex" id=""></label><br>
+
+                <!-- 多选 多选一需要name属性一致-->
+            多选<input type="checkbox" name="" id="">睡觉<input type="checkbox" name="" id="" checked><br>
+
+                <!-- 下拉 -->
+            居住地：<select name="" id="">
+                           <option value="">贵州</option>
+                           <option value="">福建</option>
+                           <option value="" selected>广东</option>
+                    </select><br>
+
+                <!-- 文件以及多选文件 -->
+            文件:<input type="file" multiple><br>
+         
+                <!-- 留言版 -->
+                <textarea cols="10" rows="2"></textarea><br>
+
+            邮箱: <input type="email" /><br>
+            网址: <input type="url" /><br>
+            日期: <input type="date" /><br>
+            时间: <input type="time" /><br>
+            数量: <input type="number" /><br>
+            手机号码: <input type="tel" /><br>
+            搜索: <input type="search" /><br>
+            颜色: <input type="color" /><br>
+
+            <!-- html5新属性， required提交前不能为空，会提示
+                              placeholder 提示词，淡色，无法被提交，value可以
+                              step数字间隔，3为-3 0 3 6
+                              pattern正则匹配
+                              min max匹配数字或者时间最大最小
+                              autofocus自动聚焦,刷新就跳转到提示框
+                              autocomplete="on"浏览器提示填充
+                              novalidate不验证表单
+                              width heigth可以用于input type='image' src的高度，很适合做按钮前边的提示
+                                
+            
+            -->
+            html5 <input type="text" required placeholder="淡色的提示" autofocus                                     
+                                     pattern="[A-Za-z]{3}" title="请输入3个字符"
+                                     name="phone" autocomplete     
+                                                                                      ><br>
+            下拉文本框 <input list="browsers"">                                                                                
+                                   <datalist id="browsers">
+                                                 <option value="Internet Explorer">
+                                                 <option value="Firefox">
+                                                 <option value="Chrome">
+                                                  <option value="Opera">
+                                                 <option value="Safari">
+                                  </datalist><br>
+                <input type="submit" value="提交表单"><input type="reset" value="重置"><br>
+    </form>
+
+
+
+
+
+
+
+
+
+            <hr>
+
+
+
+
+
+
+
+
+            <!-- 视频插入 控制 宽高 自动播放 循环 静音 预加载 自动缓存-->
+            <video controls autoplay loop muted width="290px" height="200px" poster="./src/1.png" preload="auto">
+                      <source src="lol.mp4" type="video/mp4">
+                      <source src="./src/lol.webm" type="video/webm">
+                      <p>你的浏览器不知道HTML5视频,请点击<a href="lol.mp4"></a>观看</p>
+            </video>
+
+
+            <!-- 不支持宽高，不支持预加载 load（）方法可以重载-->
+            <audio controls>
+                    <source src="./src/椒房殿 - 何晟铭.mp3" type="audio/mp3">
+                    <source src="viper.ogg" type="audio/ogg">
+                    <p>你的浏览器不支持 HTML5 音频，可点击<a href="viper.mp3">此链接</a>收听。</p>
+             </audio>
+
+
+
+            <!-- 镶嵌其他网页视频 -->
+            <iframe src="//player.bilibili.com/player.html?
+                   aid=19390801&bvid=BV1bW411n7fY&cid=31621681&page =1" frameborder="0">
+            </iframe>
+            <hr>
+
+
+            <!-- 响应式图片 在html中加载更优先-->
+            <picture>
+                <!-- 屏幕小于799px 或者屏幕大于800px 以及默认展现不同的图片-->
+                <source media="(max-width: 799px)" srcset="./src/img-799px.jpg" width=400px />
+                <source media="(min-width: 800px)" srcset="./src/img-800px.jpg" width=800px />
+                <img src="./src/img-799px.jpg" alt="Chris standing up holding his daughter Elva" />
+            </picture>
+
+            <!-- 不同分辨率显示不同图片 -->
+            <img src="默认图片" alt="提示" srcset="图片1,图片2 1.5x,图片3 2x">
+
+
+
+
+
+            <!-- 表格，th表头，tr行，td单元格 -->
+            <!-- 跨行合并rowspan=number在最上，跨列colspan在最左，先删掉不需要的 。在td上加属性。单元格间距和填充-->
+            <table align="center" border="1" cellpadding="0" cellspacing="0" width="500" height="249">
+                <caption>可以的吃</caption>
+
+                <!-- 表头 -->
+                <th>种类</th>
+                <!-- 跨两列 -->
+                <th colspan="2">食物</th>
+                <!-- tr行td格 -->
+                <tr>
+                    <td>水果</th>
+                        <td>香蕉</td>
+                        <td>苹果</td>
+                </tr>
+
+                <tr>
+                    <td>蔬菜</td>
+                    <td>白菜</td>
+                    <td>辣椒</td>
+                </tr>
+
+
+            </table>
+
+            <!-- 不支持script的将显示这段文字 -->
+            <noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

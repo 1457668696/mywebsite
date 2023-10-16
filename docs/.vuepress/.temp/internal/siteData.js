@@ -1,0 +1,1 @@
+export const siteData = JSON.parse("{\"base\":\"/\",\"lang\":\"zh-Ch\",\"title\":\"最爱吃炸鸡⭐️\",\"description\":\"喜欢写一些有趣的小玩意\",\"head\":[[\"link\",{\"rel\":\"icon\",\"href\":\"/logo.jpg\"}],[\"link\",{\"rel\":\"stylesheet\",\"href\":\"/styles/custom-prism-theme.css\"}]],\"locales\":{}}")

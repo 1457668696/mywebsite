@@ -1,0 +1,1 @@
+export const data = JSON.parse("{\"key\":\"v-5b228bdc\",\"path\":\"/python/zip.html\",\"title\":\"\",\"lang\":\"zh-Ch\",\"frontmatter\":{},\"headers\":[{\"level\":2,\"title\":\"批量加密压缩\",\"slug\":\"批量加密压缩\",\"link\":\"#批量加密压缩\",\"children\":[]}],\"git\":{},\"filePathRelative\":\"python/zip.md\"}")

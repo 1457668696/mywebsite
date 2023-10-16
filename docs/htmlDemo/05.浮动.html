@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+       /* 子元素一起浮动就可以一行显示 */
+
+        /* Q:为什么要清除浮动 
+        （本来你占位置，你浮动后如果父元素没有宽高的时候，相当于div消失了，会被接替）
+        
+         父子级这种情况，本来div是标准占位置的，但浮动以后不占位置，
+         尤其是父盒子没有高度的时候。相当于div不存在。
+         那么就会有空缺，接下来的布局就会填充进去.比如top这个div本来内部三个div占位置
+         你浮动以后，这个div直接就消失了了，这个div的位置就会被接下来的元素填充
+
+
+           A:解决办法就是给父元素设置高度。但是有个办法很麻烦或者 overflow: hidden;
+             其次是在父元素的最后面添加一个块元素占位置，可以通过伪类元素办到
+      
+                                                                                    */
+        /* 脱离标准流，移动到指定位置（脱标）。盒子不再保留原先位置 */
+        /* 多个顶端对齐，装不下就另起一行 */
+        
+        .span1 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(132, 251, 255);
+            /* 转换成浮动后可以添加宽高，具有行内块的特性 */
+            /* 先用标准流父元素排列上下，再内部子元素浮动排列左右。 */
+            /* 浮动后只能通过内部item属性设置居中 */
+        }
+        
+        .top {
+            margin: 0 auto;
+            height: 200px;
+            width: 800px;
+            background-color: rgb(231, 231, 231);
+        }
+        
+        .left {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            float: left;
+        }
+        
+        .right {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            float: right;
+        }
+        
+        .p {
+            height: 400px;
+            background-color: rgb(31, 5, 5);
+        }
+        
+        .new {
+            height: 200px;
+            background-color: rgb(109, 109, 109);
+        }
+        /* 直接给父盒子加class清楚浮动 */
+        
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+            /* 隐藏 */
+            height: 0;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 清除浮动 -->
+    <div class="top clearfix">
+        <div class="left">左浮动</div>
+        <div class="right">右浮动</div>
+        <span class="span1 ">第二个左浮动，行内元素,浮动后转成了行内块</span>
+    </div>
+
+
+
+
+
+    <div class="new">受到浮动影响的后续盒子，跟随上边左浮动,给父盒子设置清楚浮动以后就可以正常布局了</div>
+
+</body>
+
+</html>

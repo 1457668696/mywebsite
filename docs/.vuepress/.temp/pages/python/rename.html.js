@@ -1,0 +1,1 @@
+export const data = JSON.parse("{\"key\":\"v-3fdd8a61\",\"path\":\"/python/rename.html\",\"title\":\"\",\"lang\":\"zh-Ch\",\"frontmatter\":{},\"headers\":[{\"level\":2,\"title\":\"强制删除文件\",\"slug\":\"强制删除文件\",\"link\":\"#强制删除文件\",\"children\":[]}],\"git\":{},\"filePathRelative\":\"python/rename.md\"}")

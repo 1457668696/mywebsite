@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 相对定位，相对原来的位置，原来的位置保留，属于标准流，不会被占用(在浮动流的时候就不会被移动)。停职留薪  给绝对定位当爹*/
+        
+        .div1 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(226, 103, 103);
+            position: relative;
+            top: 100px;
+            left: 200px;
+        }
+        
+        .div2 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(239, 163, 163);
+        }
+        
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(239, 163, 163);
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            left: 200px;
+            bottom: 100px;
+        }
+
+        .nav {
+            /* 粘性定位 */
+            position: sticky;
+            top: 0;
+            width: 800px;
+            height: 50px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+
+
+
+        /* 绝对定位，压住盒子，偏移根据父盒子边界线 -根据祖元素（浏览器）-如果父元素没有定位，会继续往上找>以最近一级的定位父元素为主 */
+        /* 原来位置会被占用。属于脱标。浮动，凸显 */
+        /* 子绝父相最常用 */
+        
+        .father {
+            position: relative;
+            width: 500px;
+            height: 800px;
+            background-color: rgb(240, 228, 228);
+        }
+        /* 固定定位是元素固定于浏览器可视区的位置，用于规定滚动时也不会变化消失，特殊的绝对定位 与父元素无关，和浏览器有关*/
+        
+        .ab img {
+            position: fixed;
+            right: 0px;
+            top: 0px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">我是导航栏</div>
+    <div class="div1">div1,原来的位置被占用了</div>
+    <div class="div2">这个盒子按着原来的标准流布局</div>
+
+    <div class="father">父盒子相对，固定位置
+        <div class="son">子盒子绝对，随心所欲在父盒子动，按钮，提示等</div>
+    </div>
+    <div class="ab"><img src="./src/1.png" alt="" srcset=""></div>
+
+</body>
+
+</html>

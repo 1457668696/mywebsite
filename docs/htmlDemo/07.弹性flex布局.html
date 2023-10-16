@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN>
+<head>
+    <meta charset=" UTF-8 ">
+<meta http-equiv="X-UA-Compatible " content="IE=edge ">
+<meta name="viewport " content="width=device-width, initial-scale=1.0,min-width:1.0,max-width:1.0,user-scalable:0 ">
+<title>Document</title>
+<style>
+    div {
+        /* 弹性布局 不需要浮动也能一排 这里是父盒子，可以添加属性控制子盒子item的排序规则*/
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-color: bisque;
+         /* 主轴设置，row横x column竖排y reverse反转 column再次反转*/
+         flex-direction: row;
+        /* 主轴子元素排序，flew-start头end尾巴 center居中 space-around平分空间，space-between先两边贴再平分空间。 */
+        justify-content: space-between;      
+        /* 多个盒子，会自己压缩空间，所以要自动换行    */
+        flex-wrap: wrap;
+        /* 交叉y轴设置方向 同理主轴 如果是多行只能使用align-content，此属性有平分*/
+        align-items: center;
+
+
+    }
+
+    div span {
+        width: 100px;
+        height: 200px;
+        background-color: pink;
+        margin: 10px;
+        /* flex: 1; 现在可以按比例分，既可以撑开盒子，又不需要清楚浮动，还是横排。不给宽度。就是占几份的意思 */
+        /* 可以控制单独y轴子项的排序 同样是单独的*/
+        align-self: auto;
+        /* 排序，越大越前  需要单独设置样式，div span:nth-child(3): ;*/
+        order: -1;      
+    }
+</style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <!-- 多个盒子，会自己压缩空间，所以要自动换行 -->
+        <span>5</span>
+    </div>
+</body>
+
+</html>
